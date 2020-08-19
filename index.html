@@ -1,0 +1,92 @@
+<!--<!DOCTYPE html>
+
+<body>
+	<div id="boxplot"></div>
+	<div id="tooltip"></div>
+	<button type="button">View individual points</button>
+	<script src="https://d3js.org/d3.v4.js"></script>
+	<script src="js/script.js"></script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Lillie Zhou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/268b8bb572.js"></script>
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.9.1/d3.min.js"></script>-->
+   <!--<script src="https://d3js.org/d3.v4.js" charset="utf-8"></script>-->
+   <script src="https://d3js.org/d3.v4.js"></script>
+   <!--<script src="https://unpkg.com/d3@4.13.0/build/d3.min.js"></script>-->
+</head>
+
+<body>
+  <div class="jumbotron jumbotron-fluid" style="background: black;">
+    <div class="container">
+      <h1 align="center" style = "color: lightgreen;">Spotify Music Analysis</h1>
+      <div align="center">
+        <p class="lead" style="color: white;">“Lofi”, or low fidelity, is a type of music genre that is characterized by its deliberate, aesthetic use of "production flaws" and distorted instrumentals. The lack of broader analysis on the Internet about this genre of music, as well as my recent discovery of Spotify’s developer APIs, inspired me to create some data visualizations to assess its audio features. </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 align="left">Audio Features</h2>
+
+    <p>
+      According to Spotify’s API documents, audio can be evaluated based on several quantitative features:
+      <ul>
+          <li>Danceability</li>
+          <li>Instrumentalness</li>
+          <li>Energy</li>
+          <li>Loudness</li>
+          <li>Speechiness</li>
+          <li>Valence</li>
+          <li>Acousticness</li>
+      </ul>
+
+      With the exception of loudness (which is assessed in decibels), these audio features are assessed on a continuous scale of 0 to 1, where 0 is the lowest and 1 the highest. A Spotify track with a speechiness of 0.9, for example, is considered to have a high amount of spoken utterances. 
+    </p>
+  </div>
+
+  <div class="container">
+    <h2 align="left">Data Collection</h2>
+
+    <p>
+      Spotipy is a Python library that allows access to Spotify's developer APIs. With Spotipy, I wrote a Python utility that retrieves all the tracks that have been produced by the artist "Lofi ChillHop". Each track (along with its associated audio features) was written to a CSV file. 
+    </p>
+  </div>
+
+  <div class="container">
+    <h2 align="left">Visualizations</h2>
+
+    <p>
+      Using the CSV file, I built several data visualizations to analyze overall trends and patterns in audio features. I chose to build a <b>parallel coordinates chart</b> and <b>box plot</b> with an overlay of individual coordinates.
+    </p>
+  </div>
+
+  <div class="container">
+    <h5 align="left">Boxplot</h5>
+    <div id="boxplot"></div>
+    <div id="tooltip"></div>
+  </div>
+
+  <div class="container">
+    <h2 align="left">Analysis</h2>
+    <p>From this boxplot, it is observed that the Lofi tracks in this dataset trend towards high acousticness, high danceability, low to mid energy, high instrumentality, low liveness, low speechiness, and low to mid valence.
+    </p>
+  </div>
+</body>
+
+<script src="js/script.js"></script>
+</html>
